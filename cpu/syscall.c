@@ -1,25 +1,19 @@
-#include <stdlib.h>
 #include <sys/time.h>
 #include <unistd.h>
-#include <assert.h>
 #include <stdio.h>
+#include "util.h"
+#include "init.h"
 
 int foo() {
-  return 10;
+  return 1;
 }
 
 int foo2() {
   getpid();
-  return 10;
+  return 1;
 }
 
-long elapsed(struct timeval start, struct timeval end) {
-    long secs = end.tv_sec - start.tv_sec;
-    long usecs = end.tv_usec - start.tv_usec;
-    return secs * 1000000 + usecs;
-}
-
-float measure_getpid(int n_iterations, int (*func)()) {
+float measure_getpid(unsigned int n_iterations, int (*func)()) {
   int result;
   struct timeval start_time;
   struct timeval end_time;
@@ -33,8 +27,11 @@ float measure_getpid(int n_iterations, int (*func)()) {
 }
 
 int main(){
-  int NUM_TRIALS = 100;
-  int NUM_ITERATIONS = 10000000;
+  initialize();
+  unsigned int NUM_TRIALS = 100;
+  unsigned int NUM_ITERATIONS = 1000000;
+  printf("Number of trials: %u\n", NUM_TRIALS);
+  printf("Iterations per trial: %u\n", NUM_ITERATIONS);
 
   double getpid_time = 0.0;
   double foo_time = 0.0;
