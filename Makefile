@@ -6,3 +6,4 @@ all:
 	gcc cpu/proccall.c $(LIBFILES) -o bin/proccall $(CFLAGS)
 	gcc cpu/context_switch.c $(LIBFILES) -o bin/context_switch $(CFLAGS)
 	gcc cpu/thread.c $(LIBFILES) -o bin/thread $(CFLAGS)
+	gcc cpu/measurement.c $(LIBFILES) -o bin/measure $(CFLAGS)
