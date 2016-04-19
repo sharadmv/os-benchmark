@@ -22,7 +22,7 @@ float context_switch(unsigned int n_iterations) {
 int main() {
   initialize();
   fork();
-  unsigned int NUM_TRIALS = 100;
+  unsigned int NUM_TRIALS = 1000;
   unsigned int NUM_ITERATIONS = 10000;
   int sched = sched_getscheduler(getpid());
   pthread_setschedprio(pthread_self(), sched_get_priority_max(sched));
