@@ -47,10 +47,12 @@ double measure_measure2(int n_iterations) {
 
 int main() {
   initialize();
-  double cycles = measure_measure(10000000);
+  unsigned int NUM_ITERS = 10000000;
+  unsigned int CLOCK_SPEED = 3500000000.0;
+  double cycles = measure_measure(NUM_ITERS);
   printf("Average number of cycles: %f\n", cycles);
-  printf("Average time between time measurement: %f\n", cycles / 3500000000.0);
-  double cycles2 = measure_measure2(100000000);
-  printf("Average number of cycles: %f\n", cycles2);
-  printf("Average time between time measurement: %f\n", cycles2 / 3500000000.0);
+  printf("Average time between time measurement: %f\n", cycles / CLOCK_SPEED);
+  double cycles2 = measure_measure2(NUM_ITERS);
+  printf("Average number of cycles: %f\n", cycles2 / NUM_ITERS);
+  printf("Average time between time measurement: %f\n", cycles2 / CLOCK_SPEED);
 }
