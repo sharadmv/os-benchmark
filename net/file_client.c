@@ -83,10 +83,16 @@ int main(int argc , char *argv[])
   struct timeval start_time;
   struct timeval end_time;
 
+  struct timeval b_start_time;
+  struct timeval b_end_time;
+
   send(sockfd, file_size, sizeof(file_size), 0);
   recv(sockfd, response, 256, 0);
   printf("Response: %s\n", response);
   result = gettimeofday(&start_time, NULL);
+  double max_bandwidth = -1;
+  double min_bandwidth = 9999999999999999999999;
+  double bandwidth = 0;
   while (1) {
     int bytes_read = read(input_file, buffer, sizeof(buffer));
     /*printf("Read %u bytes\n", bytes_read);*/
@@ -98,17 +104,27 @@ int main(int argc , char *argv[])
 
     void *p = buffer;
     while (bytes_read > 0) {
+      result = gettimeofday(&b_start_time, NULL);
       int bytes_written = write(sockfd, p, bytes_read);
+      result = gettimeofday(&b_end_time, NULL);
+      bandwidth = 8 * bytes_written / (elapsed(b_start_time, b_end_time) / 1000.0 / 1000.0);
+      if (bandwidth > max_bandwidth) {
+        max_bandwidth = bandwidth;
+      }
+      if (bandwidth < min_bandwidth) {
+        min_bandwidth = bandwidth;
+      }
       if (bytes_written <= 0) {
       }
-      /*printf("Wrote %u bytes\n", bytes_written);*/
       bytes_read -= bytes_written;
       p += bytes_written;
     }
   }
-  recv(sockfd, response, 256, 0);
   result = gettimeofday(&end_time, NULL);
+  recv(sockfd, response, 256, 0);
   printf("Elapsed: %f\n", elapsed(start_time, end_time) / 1000.0);
-  printf("Bandwidth: %f B/s\n", file_stat.st_size / (elapsed(start_time, end_time) / 1000.0 / 1000.0));
+  printf("Throughput: %f B/s\n", file_stat.st_size / (elapsed(start_time, end_time) / 1000.0 / 1000.0));
+  printf("Max Bandwidth: %f bits/s\n", max_bandwidth);
+  printf("Min Bandwidth: %f bits/s\n", min_bandwidth);
   return 0;
 }

@@ -26,6 +26,7 @@ mem:
 net:
 	$(COMPILER) net/server.c $(LIBFILES) -o $(BINDIR)/net_server $(CFLAGS)
 	$(COMPILER) net/rtt_client.c $(LIBFILES) -o $(BINDIR)/net_rtt_client $(CFLAGS)
+	$(COMPILER) net/conn_client.c $(LIBFILES) -o $(BINDIR)/net_conn_client $(CFLAGS)
 	$(COMPILER) net/icmp_client.c $(LIBFILES) -o $(BINDIR)/net_icmp_client $(CFLAGS)
 	$(COMPILER) net/file_server.c $(LIBFILES) -o $(BINDIR)/net_file_server $(CFLAGS)
 	$(COMPILER) net/file_client.c $(LIBFILES) -o $(BINDIR)/net_file_client $(CFLAGS)
