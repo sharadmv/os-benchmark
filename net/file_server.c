@@ -8,7 +8,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
-#define BUFSIZE 1500
+#define BUFSIZE 1024 * 1024
 
 void error(char *msg) {
   printf(msg);
@@ -24,8 +24,6 @@ int main(int argc, char **argv) {
   struct sockaddr_in clientaddr;
   struct hostent *hostp;
   char message[BUFSIZE];
-  char* response = "hi";
-  char* close_message = "close\n";
   int optval;
   int n;
 
@@ -41,7 +39,7 @@ int main(int argc, char **argv) {
 
   optval = 1;
   setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR,
-       (const void *)&optval , sizeof(int));
+      (const void *)&optval , sizeof(int));
 
   bzero((char *) &serveraddr, sizeof(serveraddr));
   serveraddr.sin_family = AF_INET;
@@ -49,29 +47,35 @@ int main(int argc, char **argv) {
   serveraddr.sin_port = htons((unsigned short)portno);
 
   if (bind(listenfd, (struct sockaddr *) &serveraddr,
-     sizeof(serveraddr)) < 0)
+        sizeof(serveraddr)) < 0)
     error("ERROR on binding");
 
   if (listen(listenfd, 5) < 0)
     error("ERROR on listen");
 
   clientlen = sizeof(clientaddr);
+
+  char buffer[BUFSIZE];
+  unsigned int file_size, remain_data;
+  int len;
+  char* response = "done";
+
   while (1) {
     connfd = accept(listenfd, (struct sockaddr *) &clientaddr, &clientlen);
     if (connfd < 0)
       error("ERROR on accept");
-    bzero(message, BUFSIZE);
+    recv(connfd, buffer, BUFSIZE, 0);
+    file_size = atoi(buffer);
+    printf("File size : %u\n", file_size);
+    send(connfd, response, strlen(response), 0);
 
-    while (strcmp(close_message, message) != 0) {
-      bzero(message, BUFSIZE);
-      n = read(connfd, message, BUFSIZE);
-      if (n < 0)
-        error("ERROR reading from socket");
-
-      n = write(connfd, response, strlen(response));
-      if (n < 0)
-        error("ERROR writing to socket");
+    remain_data = file_size;
+    while ((remain_data > 0) && ((len = recv(connfd, buffer, BUFSIZE, 0)) > 0))
+    {
+      remain_data -= len;
+      printf("Received %d bytes and expect: %u bytes\n", len, remain_data);
     }
+    send(connfd, response, strlen(response), 0);
     close(connfd);
   }
 }

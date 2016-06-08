@@ -10,7 +10,7 @@
 #include <util.h>
 #include <init.h>
 
-#define BUFF_SIZE 1024
+#define BUFF_SIZE 1024 * 1024
 
 void error(char* message) {
   perror(message);
@@ -99,6 +99,5 @@ int main(int argc , char *argv[])
 
   fprintf(stderr, "Average RTT per packet: %f ms\n", mean(data, count));
   fprintf(stderr, "Stdev RTT per packet: %f ms\n", stdev(data, count));
-
   return 0;
 }
