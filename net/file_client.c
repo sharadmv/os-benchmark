@@ -89,7 +89,7 @@ int main(int argc , char *argv[])
   result = gettimeofday(&start_time, NULL);
   while (1) {
     int bytes_read = read(input_file, buffer, sizeof(buffer));
-    printf("Read %u bytes\n", bytes_read);
+    /*printf("Read %u bytes\n", bytes_read);*/
     if (bytes_read == 0)
       break;
 
@@ -101,7 +101,7 @@ int main(int argc , char *argv[])
       int bytes_written = write(sockfd, p, bytes_read);
       if (bytes_written <= 0) {
       }
-      printf("Wrote %u bytes\n", bytes_written);
+      /*printf("Wrote %u bytes\n", bytes_written);*/
       bytes_read -= bytes_written;
       p += bytes_written;
     }
@@ -109,6 +109,6 @@ int main(int argc , char *argv[])
   recv(sockfd, response, 256, 0);
   result = gettimeofday(&end_time, NULL);
   printf("Elapsed: %f\n", elapsed(start_time, end_time) / 1000.0);
-  printf("Bandwidth: %f B/s\n", file_stat.st_size / (elapsed(start_time, end_time) / 1000.0));
+  printf("Bandwidth: %f B/s\n", file_stat.st_size / (elapsed(start_time, end_time) / 1000.0 / 1000.0));
   return 0;
 }
