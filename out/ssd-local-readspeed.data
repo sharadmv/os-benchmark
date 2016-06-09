@@ -1,0 +1,57 @@
+Filename: files/128k.dat
+Average sequential read time: 0.000293 ms
+Average random read time: 0.000238 ms
+Filename: files/128m.dat
+Average sequential read time: 0.007981 ms
+Average random read time: 0.073631 ms
+Filename: files/16k.dat
+Average sequential read time: 0.000235 ms
+Average random read time: 0.000240 ms
+Filename: files/16m.dat
+Average sequential read time: 0.003701 ms
+Average random read time: 0.000764 ms
+Filename: files/1g.dat
+Average sequential read time: 0.009359 ms
+Average random read time: 0.114601 ms
+Filename: files/1m.dat
+Average sequential read time: 0.000498 ms
+Average random read time: 0.000267 ms
+Filename: files/256k.dat
+Average sequential read time: 0.000338 ms
+Average random read time: 0.000238 ms
+Filename: files/256m.dat
+Average sequential read time: 0.008264 ms
+Average random read time: 0.095482 ms
+Filename: files/2m.dat
+Average sequential read time: 0.000682 ms
+Average random read time: 0.000249 ms
+Filename: files/32k.dat
+Average sequential read time: 0.000248 ms
+Average random read time: 0.000225 ms
+Filename: files/32m.dat
+Average sequential read time: 0.006758 ms
+Average random read time: 0.000753 ms
+Filename: files/4k.dat
+Average sequential read time: 0.000262 ms
+Average random read time: 0.000207 ms
+Filename: files/4m.dat
+Average sequential read time: 0.001205 ms
+Average random read time: 0.000298 ms
+Filename: files/512k.dat
+Average sequential read time: 0.000378 ms
+Average random read time: 0.000245 ms
+Filename: files/512m.dat
+Average sequential read time: 0.007957 ms
+Average random read time: 0.109980 ms
+Filename: files/64k.dat
+Average sequential read time: 0.000300 ms
+Average random read time: 0.000233 ms
+Filename: files/64m.dat
+Average sequential read time: 0.008093 ms
+Average random read time: 0.036141 ms
+Filename: files/8k.dat
+Average sequential read time: 0.000234 ms
+Average random read time: 0.000215 ms
+Filename: files/8m.dat
+Average sequential read time: 0.002439 ms
+Average random read time: 0.000423 ms
