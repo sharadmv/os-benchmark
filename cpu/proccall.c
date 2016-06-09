@@ -50,99 +50,138 @@ float measure_foo0(int n_iterations) {
   return elapsed(start_time, end_time) / 1000.0;
 }
 
-float measure_foo1(int n_iterations) {
+double measure_foo1(int n_iterations) {
   int result;
-  struct timeval start_time;
-  struct timeval end_time;
 
-  result = gettimeofday(&start_time, NULL);
+  unsigned long long int x;
+  unsigned long long int y;
+  double sum = 0;
+  unsigned int lo,hi;
+
   for (int i = 0; i < n_iterations; i++) {
+    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    x = ((long long)hi << 32) | lo;
     foo1(1);
+    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    y = ((long long)hi << 32) | lo;
+    sum += y - x;
   }
-  result = gettimeofday(&end_time, NULL);
-  return elapsed(start_time, end_time) / 1000.0;
+  return sum;
 }
 
-float measure_foo2(int n_iterations) {
+double measure_foo2(int n_iterations) {
   int result;
-  struct timeval start_time;
-  struct timeval end_time;
 
-  result = gettimeofday(&start_time, NULL);
+  unsigned long long int x;
+  unsigned long long int y;
+  double sum = 0;
+  unsigned int lo,hi;
+
   for (int i = 0; i < n_iterations; i++) {
+    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    x = ((long long)hi << 32) | lo;
     foo2(1, 1);
+    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    y = ((long long)hi << 32) | lo;
+    sum += y - x;
   }
-  result = gettimeofday(&end_time, NULL);
-  return elapsed(start_time, end_time) / 1000.0;
+  return sum;
 }
 
-float measure_foo3(int n_iterations) {
+double measure_foo3(int n_iterations) {
   int result;
-  struct timeval start_time;
-  struct timeval end_time;
 
-  result = gettimeofday(&start_time, NULL);
+  unsigned long long int x;
+  unsigned long long int y;
+  double sum = 0;
+  unsigned int lo,hi;
+
   for (int i = 0; i < n_iterations; i++) {
+    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    x = ((long long)hi << 32) | lo;
     foo3(1, 1, 1);
+    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    y = ((long long)hi << 32) | lo;
+    sum += y - x;
   }
-  result = gettimeofday(&end_time, NULL);
-  return elapsed(start_time, end_time) / 1000.0;
+  return sum;
 }
 
-float measure_foo4(int n_iterations) {
+double measure_foo4(int n_iterations) {
   int result;
-  struct timeval start_time;
-  struct timeval end_time;
 
-  result = gettimeofday(&start_time, NULL);
+  unsigned long long int x;
+  unsigned long long int y;
+  double sum = 0;
+  unsigned int lo,hi;
+
   for (int i = 0; i < n_iterations; i++) {
+    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    x = ((long long)hi << 32) | lo;
     foo4(1, 1, 1, 1);
+    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    y = ((long long)hi << 32) | lo;
+    sum += y - x;
   }
-  result = gettimeofday(&end_time, NULL);
-  return elapsed(start_time, end_time) / 1000.0;
+  return sum;
 }
 
-
-float measure_foo5(int n_iterations) {
+double measure_foo5(int n_iterations) {
   int result;
-  struct timeval start_time;
-  struct timeval end_time;
 
-  result = gettimeofday(&start_time, NULL);
+  unsigned long long int x;
+  unsigned long long int y;
+  double sum = 0;
+  unsigned int lo,hi;
+
   for (int i = 0; i < n_iterations; i++) {
+    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    x = ((long long)hi << 32) | lo;
     foo5(1, 1, 1, 1, 1);
+    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    y = ((long long)hi << 32) | lo;
+    sum += y - x;
   }
-  result = gettimeofday(&end_time, NULL);
-  return elapsed(start_time, end_time) / 1000.0;
+  return sum;
 }
 
-
-float measure_foo6(int n_iterations) {
+double measure_foo6(int n_iterations) {
   int result;
-  struct timeval start_time;
-  struct timeval end_time;
 
-  result = gettimeofday(&start_time, NULL);
+  unsigned long long int x;
+  unsigned long long int y;
+  double sum = 0;
+  unsigned int lo,hi;
+
   for (int i = 0; i < n_iterations; i++) {
+    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    x = ((long long)hi << 32) | lo;
     foo6(1, 1, 1, 1, 1, 1);
+    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    y = ((long long)hi << 32) | lo;
+    sum += y - x;
   }
-  result = gettimeofday(&end_time, NULL);
-  return elapsed(start_time, end_time) / 1000.0;
+  return sum;
 }
 
-float measure_foo7(int n_iterations) {
+double measure_foo7(int n_iterations) {
   int result;
-  struct timeval start_time;
-  struct timeval end_time;
 
-  result = gettimeofday(&start_time, NULL);
+  unsigned long long int x;
+  unsigned long long int y;
+  double sum = 0;
+  unsigned int lo,hi;
+
   for (int i = 0; i < n_iterations; i++) {
+    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    x = ((long long)hi << 32) | lo;
     foo7(1, 1, 1, 1, 1, 1, 1);
+    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    y = ((long long)hi << 32) | lo;
+    sum += y - x;
   }
-  result = gettimeofday(&end_time, NULL);
-  return elapsed(start_time, end_time) / 1000.0;
+  return sum;
 }
-
 
 int main(){
   initialize();
