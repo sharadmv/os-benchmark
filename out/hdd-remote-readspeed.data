@@ -1,0 +1,57 @@
+Filename: deepx/128k.dat
+Average sequential read time: 0.000652 ms
+Average random read time: 0.000278 ms
+Filename: deepx/128m.dat
+Average sequential read time: 0.036852 ms
+Average random read time: 0.367524 ms
+Filename: deepx/16k.dat
+Average sequential read time: 0.000357 ms
+Average random read time: 0.000250 ms
+Filename: deepx/16m.dat
+Average sequential read time: 0.017247 ms
+Average random read time: 0.000567 ms
+Filename: deepx/1g.dat
+Average sequential read time: 0.038816 ms
+Average random read time: 0.596302 ms
+Filename: deepx/1m.dat
+Average sequential read time: 0.001700 ms
+Average random read time: 0.000308 ms
+Filename: deepx/256k.dat
+Average sequential read time: 0.000775 ms
+Average random read time: 0.000275 ms
+Filename: deepx/256m.dat
+Average sequential read time: 0.037533 ms
+Average random read time: 0.575281 ms
+Filename: deepx/2m.dat
+Average sequential read time: 0.002802 ms
+Average random read time: 0.000306 ms
+Filename: deepx/32k.dat
+Average sequential read time: 0.000426 ms
+Average random read time: 0.000290 ms
+Filename: deepx/32m.dat
+Average sequential read time: 0.031801 ms
+Average random read time: 0.000749 ms
+Filename: deepx/4k.dat
+Average sequential read time: 0.000326 ms
+Average random read time: 0.000252 ms
+Filename: deepx/4m.dat
+Average sequential read time: 0.005576 ms
+Average random read time: 0.000351 ms
+Filename: deepx/512k.dat
+Average sequential read time: 0.001031 ms
+Average random read time: 0.000285 ms
+Filename: deepx/512m.dat
+Average sequential read time: 0.038451 ms
+Average random read time: 0.574839 ms
+Filename: deepx/64k.dat
+Average sequential read time: 0.000494 ms
+Average random read time: 0.000279 ms
+Filename: deepx/64m.dat
+Average sequential read time: 0.037390 ms
+Average random read time: 0.231852 ms
+Filename: deepx/8k.dat
+Average sequential read time: 0.000943 ms
+Average random read time: 0.000262 ms
+Filename: deepx/8m.dat
+Average sequential read time: 0.014937 ms
+Average random read time: 0.000420 ms

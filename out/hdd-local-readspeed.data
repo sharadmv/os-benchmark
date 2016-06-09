@@ -1,0 +1,57 @@
+Filename: /home/sharad/big/files/128k.dat
+Average sequential read time: 0.001889 ms
+Average random read time: 0.000215 ms
+Filename: /home/sharad/big/files/128m.dat
+Average sequential read time: 0.021900 ms
+Average random read time: 2.519582 ms
+Filename: /home/sharad/big/files/16k.dat
+Average sequential read time: 0.000766 ms
+Average random read time: 0.000205 ms
+Filename: /home/sharad/big/files/16m.dat
+Average sequential read time: 0.009093 ms
+Average random read time: 0.000536 ms
+Filename: /home/sharad/big/files/1g.dat
+Average sequential read time: 0.018659 ms
+Average random read time: 5.739603 ms
+Filename: /home/sharad/big/files/1m.dat
+Average sequential read time: 0.001743 ms
+Average random read time: 0.000243 ms
+Filename: /home/sharad/big/files/256k.dat
+Average sequential read time: 0.000582 ms
+Average random read time: 0.000215 ms
+Filename: /home/sharad/big/files/256m.dat
+Average sequential read time: 0.023585 ms
+Average random read time: 3.966102 ms
+Filename: /home/sharad/big/files/2m.dat
+Average sequential read time: 0.002328 ms
+Average random read time: 0.000254 ms
+Filename: /home/sharad/big/files/32k.dat
+Average sequential read time: 0.000508 ms
+Average random read time: 0.000202 ms
+Filename: /home/sharad/big/files/32m.dat
+Average sequential read time: 0.019151 ms
+Average random read time: 0.000627 ms
+Filename: /home/sharad/big/files/4k.dat
+Average sequential read time: 0.000206 ms
+Average random read time: 0.000187 ms
+Filename: /home/sharad/big/files/4m.dat
+Average sequential read time: 0.002853 ms
+Average random read time: 0.000277 ms
+Filename: /home/sharad/big/files/512k.dat
+Average sequential read time: 0.000449 ms
+Average random read time: 0.000242 ms
+Filename: /home/sharad/big/files/512m.dat
+Average sequential read time: 0.021359 ms
+uAverage random read time: 4.957756 ms
+Filename: /home/sharad/big/files/64k.dat
+Average sequential read time: 0.001053 ms
+Average random read time: 0.000206 ms
+Filename: /home/sharad/big/files/64m.dat
+Average sequential read time: 0.021505 ms
+Average random read time: 0.179784 ms
+Filename: /home/sharad/big/files/8k.dat
+Average sequential read time: 0.000518 ms
+Average random read time: 0.000207 ms
+Filename: /home/sharad/big/files/8m.dat
+Average sequential read time: 0.005669 ms
+Average random read time: 0.000488 ms
