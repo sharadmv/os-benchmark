@@ -1,0 +1,24 @@
+#!/bin/sh
+dd if=/dev/zero of=1k.dat count=1 bs=1K
+dd if=/dev/zero of=2k.dat count=2 bs=1K
+dd if=/dev/zero of=4k.dat count=4 bs=1K
+dd if=/dev/zero of=8k.dat count=8 bs=1K
+dd if=/dev/zero of=16k.dat count=16 bs=1K
+dd if=/dev/zero of=32k.dat count=32 bs=1K
+dd if=/dev/zero of=64k.dat count=64 bs=1K
+dd if=/dev/zero of=128k.dat count=128 bs=1K
+dd if=/dev/zero of=256k.dat count=256 bs=1K
+dd if=/dev/zero of=512k.dat count=512 bs=1K
+
+dd if=/dev/zero of=1m.dat count=1 bs=1M
+dd if=/dev/zero of=2m.dat count=2 bs=1M
+dd if=/dev/zero of=4m.dat count=4 bs=1M
+dd if=/dev/zero of=8m.dat count=8 bs=1M
+dd if=/dev/zero of=16m.dat count=16 bs=1M
+dd if=/dev/zero of=32m.dat count=32 bs=1M
+dd if=/dev/zero of=64m.dat count=64 bs=1M
+dd if=/dev/zero of=128m.dat count=128 bs=1M
+dd if=/dev/zero of=256m.dat count=256 bs=1M
+dd if=/dev/zero of=512m.dat count=512 bs=1M
+
+dd if=/dev/zero of=1g.dat count=1 bs=1G

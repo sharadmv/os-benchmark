@@ -1,7 +1,7 @@
 LIBDIR = lib
 LIBFILES = lib/*.c
 BINDIR = bin
-CFLAGS = -std=c99 -pthread -I$(LIBDIR) -lm
+CFLAGS = -std=c99 -g -pthread -I$(LIBDIR) -lm
 COMPILER = colorgcc
 
 .PHONY: all mem cpu net fs
@@ -33,3 +33,6 @@ net:
 
 fs:
 	$(COMPILER) fs/cache.c $(LIBFILES) -o $(BINDIR)/fs_cache $(CFLAGS)
+	$(COMPILER) fs/read_speed.c $(LIBFILES) -o $(BINDIR)/fs_read_speed $(CFLAGS)
+	$(COMPILER) fs/access.c $(LIBFILES) -o $(BINDIR)/fs_access $(CFLAGS)
+	$(COMPILER) fs/access_time.c $(LIBFILES) -o $(BINDIR)/fs_access_time $(CFLAGS)

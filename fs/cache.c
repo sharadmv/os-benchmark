@@ -3,13 +3,13 @@
 
 #include <sys/time.h>
 #include <unistd.h>
-#include<util.h>
+#include <util.h>
 
 #define MAXBUFLEN 1000000
 
 int main(int argc, char** argv) {
   if (argc < 3) {
-    printf("Usage: %s count file1 file2 ...\nl", argv[0]);
+    printf("Usage: %s count file1 file2 ...\n", argv[0]);
     exit(1);
   }
 
@@ -51,6 +51,6 @@ int main(int argc, char** argv) {
     fprintf(stderr, "File: %s\n", filename);
     fprintf(stderr, "Average read time: %f ms\n", mean(data, count));
     fprintf(stderr, "Stdev read time: %f ms\n", stdev(data, count));
-    fprintf(stderr, "\n", filename);
+    fprintf(stderr, "\n");
   }
 }
