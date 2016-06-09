@@ -4,9 +4,9 @@ BINDIR = bin
 CFLAGS = -std=c99 -pthread -I$(LIBDIR) -lm
 COMPILER = colorgcc
 
-.PHONY: all mem cpu net
+.PHONY: all mem cpu net fs
 
-all: cpu mem net
+all: cpu mem net fs
 
 cpu:
 	$(COMPILER) cpu/syscall.c $(LIBFILES) -o $(BINDIR)/syscall $(CFLAGS)
@@ -30,3 +30,6 @@ net:
 	$(COMPILER) net/icmp_client.c $(LIBFILES) -o $(BINDIR)/net_icmp_client $(CFLAGS)
 	$(COMPILER) net/file_server.c $(LIBFILES) -o $(BINDIR)/net_file_server $(CFLAGS)
 	$(COMPILER) net/file_client.c $(LIBFILES) -o $(BINDIR)/net_file_client $(CFLAGS)
+
+fs:
+	$(COMPILER) fs/cache.c $(LIBFILES) -o $(BINDIR)/fs_cache $(CFLAGS)

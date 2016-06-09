@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<string.h>    //strlen
 #include<sys/socket.h>
 #include<arpa/inet.h> //inet_addr
@@ -14,11 +15,6 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-
-void error(char* message) {
-  perror(message);
-  exit(1);
-}
 
 int init_socket(char* hostname, int port) {
   int sockfd = 0;

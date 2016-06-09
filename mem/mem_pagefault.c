@@ -39,7 +39,7 @@ double benchmark(unsigned int n_iterations) {
     result2 += elapsed(start_time, end_time);
     close(fd);
   }
-  printf("%f\n", sum);
+  printf("%u\n", sum);
   return result * 1000.0 / n_iterations;
 }
 

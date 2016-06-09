@@ -8,12 +8,9 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
-#define BUFSIZE 1500
+#include <util.h>
 
-void error(char *msg) {
-  printf(msg);
-  exit(1);
-}
+#define BUFSIZE 1500
 
 int main(int argc, char **argv) {
   int listenfd;

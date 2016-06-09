@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include <stdlib.h>
 #include<string.h>    //strlen
 #include <sys/time.h>
 #include <math.h>
@@ -37,6 +38,11 @@ double stdev(double data[], int n)
     return sqrt(sum_deviation/n);
 }
 
+void error(char* message) {
+  perror(message);
+  exit(1);
+}
+
 void get_ip(char* hostname, char* ip) {
   struct hostent* he;
   struct in_addr **addr_list;
@@ -53,4 +59,3 @@ void get_ip(char* hostname, char* ip) {
     strcpy(ip , inet_ntoa(*addr_list[i]) );
   }
 }
-

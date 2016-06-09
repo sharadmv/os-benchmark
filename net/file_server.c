@@ -10,11 +10,6 @@
 
 #define BUFSIZE 1024 * 1024
 
-void error(char *msg) {
-  printf(msg);
-  exit(1);
-}
-
 int main(int argc, char **argv) {
   int listenfd;
   int connfd;
